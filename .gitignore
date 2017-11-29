@@ -1,0 +1,9 @@
+/.settings
+/build
+/ivy
+/lib
+/WebContent/WEB-INF/lib/
+.classpath
+.project
+ivy_old.xml
+sde2_server_scarton.war

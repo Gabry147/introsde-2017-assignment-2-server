@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one
+   or more contributor license agreements.  See the NOTICE file
+   distributed with this work for additional information
+   regarding copyright ownership.  The ASF licenses this file
+   to you under the Apache License, Version 2.0 (the
+   "License"); you may not use this file except in compliance
+   with the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied.  See the License for the
+   specific language governing permissions and limitations
+   under the License.    
+-->
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+    <info
+        organisation="introsde"
+        module="second_assignment"
+        status="complete">
+	</info>
+	
+	<dependencies>
+        <!--JERSEY dependencies-->
+        <dependency org="org.glassfish.jersey.core" name="jersey-common" rev="2.25.1"/>
+        <dependency org="org.glassfish.jersey.core" name="jersey-server" rev="2.25.1"/>
+        <dependency org="org.glassfish.jersey.core" name="jersey-client" rev="2.25.1"/>
+        <dependency org="org.glassfish.jersey.containers" name="jersey-container-servlet" rev="2.25.1"/>
+        <dependency org="org.glassfish.jersey.containers" name="jersey-container-jetty-http" rev="2.25.1"/>
+        <dependency org="org.glassfish.jersey.containers" name="jersey-container-jdk-http" rev="2.25.1"/>
+        <dependency org="org.glassfish.jersey.media" name="jersey-media-json-jackson" rev="2.25.1"/>
+        <!--JACKSON dependencies-->
+        <dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.9.2"/>
+        <dependency org="com.fasterxml.jackson.module" name="jackson-module-jaxb-annotations" rev="2.9.2"/>
+        <dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.9.2"/>
+        <dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.9.2"/>
+        <dependency org="com.fasterxml.jackson.jaxrs" name="jackson-jaxrs-json-provider" rev="2.9.2"/>
+        <dependency org="com.fasterxml.jackson.jaxrs" name="jackson-jaxrs-base" rev="2.9.2"/>
+        
+        <!--DATABASES dependencies-->
+		<dependency org="org.postgresql" name="postgresql" rev="42.1.4"/>
+        
+        <!--EJB dependencies-->
+        <dependency org="javax.ejb" name="javax.ejb-api" rev="3.2"/>
+        <!--PERSISTENCE dependencies-->
+        <dependency org="org.hibernate" name="hibernate-core" rev="5.2.12.Final">
+            <exclude  org="dom4j"/>
+        </dependency>
+        <!-- Wrong dependency into hibernate, must exclude and include the right version-->
+        <dependency org="dom4j" name="dom4j" rev="1.6.1"/>
+
+        <!-- This library is called by another dependency but it gives error, force to download last version -->
+        <dependency org="com.ibm.icu" name="icu4j" rev="4.8"/>
+                
+    </dependencies>
+	
+</ivy-module>
